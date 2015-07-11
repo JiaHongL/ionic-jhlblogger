@@ -1,0 +1,62 @@
+/* Empty. Add your own CSS if you like */
+.hiddenOverFlow {
+   /*width:200px;*/
+   height:150px;   
+   overflow:hidden;         /*--設定超出的內容隱藏, IE, FireFox通用--*/
+   text-overflow:ellipsis;  /*--(IE專用)在內容超出時,在後方補上逗號--*/
+   white-space:nowrap; /*-- 設定內容強制顯示一行,直到內容結束或<br>--*/
+}
+
+.padding_style{
+	/*padding-bottom:10%;*/
+}
+
+img{
+  display: inline-block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+  padding: 4px;
+  line-height: 1.42857143;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+}
+
+
+.textarea_style{
+   /*height:100px;*/
+  width:100%;
+  border : 0;
+  overflow-y : auto; /* IE */
+  resize : none; /* Firefox, Chrome */
+  margin-bottom:1%;
+}
+
+.textarea_style2{
+   /*height:100px;*/
+  width:100%;
+  border : 1;
+  overflow-y : auto; /* IE */
+  resize : none; /* Firefox, Chrome */
+  margin-bottom:1%;
+}
+
+.margin_2_style{
+  padding-top:4%;
+  padding-right:4%;
+  padding-left:4%;
+}
+
+.d_time{
+  text-align:right;
+}
+/*    textarea:focus {
+      outline : 0; 
+    } */
+/*    .message_item{
+      padding-bottom:1%;
+    }*/
