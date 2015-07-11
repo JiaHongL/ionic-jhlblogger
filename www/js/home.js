@@ -5,7 +5,7 @@ myApp.controller('homeCtrl', ['$scope','blogger','$sce','$ionicLoading','$ionicA
 $scope.new_article = function() {
   blogger.get_new_article().then(function(res){
     $scope.article_list = res.data.results;
-    console.log($scope.article_list);
+    // console.log($scope.article_list);
   });
 };
 $scope.new_article();
@@ -15,7 +15,7 @@ $scope.new_article();
 $scope.hot_article = function() {
   blogger.get_hot_article().then(function(res){
     $scope.hot_list = res.data.results;
-    console.log($scope.article_list);
+    // console.log($scope.article_list);
   });
 };
 

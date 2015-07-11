@@ -1,7 +1,7 @@
 myApp.controller('classCtrl', ['$scope','blogger','$sce','$stateParams','$ionicActionSheet','$timeout',function ($scope,blogger,$sce,$stateParams,$ionicActionSheet, $timeout) {
 $scope.test = $stateParams.class_id;
 blogger.get_class_article2($stateParams.class_id).then(function(res){
-	 console.log(res);
+	 // console.log(res);
 	 $scope.class_list = res.data.results;
 });
 
