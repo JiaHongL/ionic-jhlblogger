@@ -64,7 +64,7 @@ setTimeout(function(){
        // { text: 'Move' }
      ],
      // destructiveText: 'Delete',
-     titleText: 'Modify your album',
+     titleText: 'Share this article',
      cancelText: 'Cancel',
      cancel: function() {
           // add cancel code..

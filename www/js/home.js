@@ -49,7 +49,7 @@ setTimeout(function(){
        // { text: 'Move' }
      ],
      // destructiveText: 'Delete',
-     titleText: '',
+     titleText: 'Share this article',
      cancelText: 'Cancel',
      cancel: function() {
           // add cancel code..
