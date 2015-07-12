@@ -36,7 +36,7 @@ $scope.show();
 
 setTimeout(function(){
   $ionicLoading.hide();
-}, 1000);
+}, 1500);
 
 
  // Triggered on a button click, or some other target
@@ -49,7 +49,7 @@ setTimeout(function(){
        // { text: 'Move' }
      ],
      // destructiveText: 'Delete',
-     titleText: 'Modify your album',
+     titleText: '',
      cancelText: 'Cancel',
      cancel: function() {
           // add cancel code..

@@ -51,7 +51,7 @@ $scope.show();
 
 setTimeout(function(){
   $ionicLoading.hide();
-}, 1000);
+}, 1500);
 
 
 // Triggered on a button click, or some other target

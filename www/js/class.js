@@ -1,4 +1,4 @@
-myApp.controller('classCtrl', ['$scope','blogger','$sce','$stateParams','$ionicActionSheet','$timeout',function ($scope,blogger,$sce,$stateParams,$ionicActionSheet, $timeout) {
+myApp.controller('classCtrl', ['$scope','blogger','$sce','$stateParams','$ionicActionSheet','$timeout','$ionicLoading',function ($scope,blogger,$sce,$stateParams,$ionicActionSheet, $timeout,$ionicLoading) {
 $scope.test = $stateParams.class_id;
 blogger.get_class_article2($stateParams.class_id).then(function(res){
 	 // console.log(res);
@@ -8,6 +8,22 @@ blogger.get_class_article2($stateParams.class_id).then(function(res){
 $scope.trustAsHtml = function(string) {
     return $sce.trustAsHtml(string);
 };
+
+
+
+$scope.show = function() {
+$ionicLoading.show({
+  template: 'Loading...'
+});
+};
+$scope.show();
+
+setTimeout(function(){
+  $ionicLoading.hide();
+}, 500);
+
+
+
 
  // Triggered on a button click, or some other target
  $scope.show2 = function(id) {
