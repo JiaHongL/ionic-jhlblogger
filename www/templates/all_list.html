@@ -4,7 +4,7 @@
     	<div class="item">
     		<i class="icon ion-android-calendar"></i>
         <a style="text-decoration:none;padding-left:8px;color:#666;" href="#/app/read_article/{{list.objectId}}">
-			{{list.createdAt| date : 'yyyy-MM-dd'}} {{list.title}}
+			{{list.createdAt| limitTo:10}} {{list.title}}
         </a>
 		</div>
 	</div>
