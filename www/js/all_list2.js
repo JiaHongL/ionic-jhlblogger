@@ -9,8 +9,8 @@ $scope.$on('stateChangeSuccess', function() {
 });
 
 $scope.loadMore= function() {
-  blogger.get_article($scope.start_item,4).then(function(res){
-    for (var i=0;i<4;i++){
+  blogger.get_article($scope.start_item,3).then(function(res){
+    for (var i=0;i<3;i++){
       // console.log(res.data.results[i]);
       if (res.data.results[i]==undefined){
         $scope.moreDataCanBeLoaded = false;
@@ -18,7 +18,7 @@ $scope.loadMore= function() {
         $scope.article_list2.push(res.data.results[i]);
       }
     }
-    $scope.start_item = $scope.start_item + 4;
+    $scope.start_item = $scope.start_item + 3;
     $scope.$broadcast('scroll.infiniteScrollComplete');
   });
 };
