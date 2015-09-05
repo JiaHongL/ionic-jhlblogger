@@ -1,6 +1,6 @@
 <ion-view view-title="全部文章">
-  <ion-content class="has-footer">
-    <div ng-repeat="list in article_list2 "> 
+  <ion-content class="has-footer">   
+      <div ng-repeat="list in article_list2 "> 
       <div class="list card"> 
         <div class="item item-avatar">
             <img src="http://files.parsetfss.com/94c0de81-23b3-4a8c-842f-d063b93005c3/tfss-d2a33eae-5215-48c2-869c-60ae8922c7e8-20150412_001842000_iOS.jpg">
@@ -24,6 +24,11 @@
          </div>
        </div>
     </div>
+    <ion-infinite-scroll
+    on-infinite="loadMore()"
+    ng-if="moreDataCanBeLoaded"
+    distance="1%">
+   </ion-infinite-scroll>  
   </ion-content>
   <div class="bar bar-footer bar-light">
   	<div class="title">JHL©2015</div>

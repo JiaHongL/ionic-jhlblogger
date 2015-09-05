@@ -1,9 +1,28 @@
 myApp.controller('all_list2Ctrl', ['$scope','blogger','$sce','$ionicLoading','$ionicActionSheet','$timeout',function ($scope,blogger,$sce,$ionicLoading,$ionicActionSheet, $timeout) {
 
-blogger.get_all_article().then(function(res){
-	// console.log(res);
-	$scope.article_list2 = res.data.results;
+$scope.start_item = 0;
+$scope.article_list2 = [];
+$scope.moreDataCanBeLoaded = true;
+
+$scope.$on('stateChangeSuccess', function() {
+    $scope.loadMore();
 });
+
+$scope.loadMore= function() {
+  blogger.get_article($scope.start_item,3).then(function(res){
+    for (var i=0;i<3;i++){
+      // console.log(res.data.results[i]);
+      if (res.data.results[i]==undefined){
+        $scope.moreDataCanBeLoaded = false;
+      }else{
+        $scope.article_list2.push(res.data.results[i]);
+      }
+    }
+    $scope.start_item = $scope.start_item + 3;
+    $scope.$broadcast('scroll.infiniteScrollComplete');
+  });
+};
+
 
 $scope.trustAsHtml = function(string) {
     return $sce.trustAsHtml(string);
