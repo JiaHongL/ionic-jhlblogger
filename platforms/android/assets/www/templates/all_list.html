@@ -1,0 +1,15 @@
+<ion-view view-title="清單">
+  <ion-content class="has-footer">
+    <div ng-repeat="list in article_list ">
+    	<div class="item">
+    		<i class="icon ion-android-calendar"></i>
+        <a style="text-decoration:none;padding-left:8px;color:#666;" href="#/app/read_article/{{list.objectId}}">
+			{{list.createdAt| limitTo:10}} {{list.title}}
+        </a>
+		</div>
+	</div>
+  </ion-content>
+  <div class="bar bar-footer bar-light">
+  	<div class="title">JHL©2015</div>
+  </div>
+</ion-view>

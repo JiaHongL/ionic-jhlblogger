@@ -1,0 +1,70 @@
+<ion-view view-title="">
+    <ion-content class="has-footer">	
+		<div class="read_article">
+			<div ng-repeat="list in article_list " class="list">
+				<div class="d_title">
+					<h1 style="text-align:center;padding-bottom:5%;">{{list.title}}</h1>
+				</div>
+				
+				<div class="d_article">
+					<div  class="d31" ng-bind-html="trustAsHtml(list.article)" >
+					</div>
+				</div>
+				<div class="d_time">
+					<h5 class="d21">
+						&nbsp;&nbsp;    
+						<i class="icon  ion-person"></i>
+						作者：JHL  
+						&nbsp;
+						<i class="icon  ion-calendar"></i>
+						時間：{{list.createdAt| date : 'yyyy-MM-dd hh:mm'}}  
+						&nbsp;
+						<a href="#" style="text-decoration:none;" ng-click="show2(list.objectId)"> 
+							<i class="icon ion-social-facebook-outline"> Share </i>
+						</a>
+						&nbsp;
+						&nbsp;
+					</h5>
+				</div>
+			</div>
+		</div>
+		<div class="message_post ">
+			<div class="card">
+				<form class="list" ng-submit="message_post(username,message)"> 	
+					  <div class="form-group margin_2_style">
+				    	<input type="test" style="width:100%;" class="form-control" id="exampleInputEmail1" placeholder="訪客" ng-model="username">	    
+					  </div>
+					  <div class="form-group margin_2_style" >
+					  	<textarea class="textarea_style2" class="form-control" rows="3" placeholder="Message..." ng-model="message"></textarea>
+					  </div>
+					  <div class="form-group margin_2_style">
+					  	<button type="submit" class="button button-block button-dark">
+					  	送出
+						</button>
+					  </div>		
+				</form>
+			</div>
+		</div>
+		<div class="message_list " ng-repeat="list in message_list ">
+			<div class="card ">
+				<div class="item item-text-wrap">
+					<h1>#{{$index+1}}</h1>
+					<i class="icon  ion-person">
+						{{list.name}}
+					</i>
+					<p>{{list.createdAt| date : 'yyyy-MM-dd hh:mm:ss'}}<p>
+					<textarea class="textarea_style" disabled='disabled'  rows="3">{{list.message}}</textarea>
+					<i class="icon  ion-arrow-graph-down-right">
+					<textarea class="textarea_style" disabled='disabled'>{{list.reply_message||' 尚未回覆'}}</textarea>
+					</i>
+				</div>
+			</div>
+		</div>		
+	</ion-content>
+
+
+	<div class="bar bar-footer bar-light">
+    	<div class="title">JHL©2015</div>
+    </div>	
+</ion-view>
+
